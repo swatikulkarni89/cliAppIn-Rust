@@ -1,10 +1,10 @@
 use std::{
-    env::{self, args},
-    fmt::Error,
-    fs, process,
+    env::{self},
+    //fmt::Error,
+    fs, process
 };
 
-use std::result;
+//use std::result;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -19,16 +19,16 @@ fn main() {
 }
 
 struct Config {
-    query: String,
+    //query: String,
     filename: String,
 }
 impl Config {
     fn new(args: &[String]) -> Result<Config, &str> {
-        if args.len() < 3 {
+        if args.len() < 1 {
             return Err("no enough arguments");
         }
-        let query = args[1].clone();
-        let filename = args[2].clone();
-        Ok(Config { query, filename })
+        //let query = args[1].clone();
+        let filename = args[1].clone();
+        Ok(Config {  filename })
     }
 }
